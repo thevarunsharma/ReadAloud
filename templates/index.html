@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Read Aloud</title>
+  <style>
+    h1{
+      font-size: 8vw;
+      font-family:monospace;
+      font-weight: 1000;
+      text-shadow: 2px 2px gray;
+      margin: 2vw;
+      color: #3b537a;
+    }
+    div{
+      font-size: 20vw;
+    }
+    .button {
+      background-color: #3b537a; /* Green */
+      border: none;
+      border-radius: 2vw;
+      color: white;
+      padding: 2vw 2vw;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 6vw;
+      width: 64vw;
+    }
+    .inputfile {
+      width: 0.1px;
+      height: 0.1px;
+	    opacity: 0;
+	    overflow: hidden;
+	    position: absolute;
+	    z-index: -1;
+    }
+    .inputfile + label {
+      font-size: 6vw;
+      color: white;
+      padding: 2vw 2vw;
+      background-color: #3b537a; /* Green */
+      padding: 2vw 2vw;
+      display: inline-block;
+      font-family: arial;
+      border: none;
+      border-radius: 2vw;
+      width: 60vw;
+      margin: 2vw;
+      margin-top: 10vw;
+      margin-bottom: 5vw;
+    }
+  </style>
+</head>
+<body>
+<div align='center'>
+  <h1>Read Aloud</h1>
+<form action = "" method = "POST" enctype = "multipart/form-data">
+  <input type="file" name="file" id="file" class="inputfile" />
+  <label for="file">Choose a file</label><br/>
+  <input type = "submit" value="Upload Image" class="button">
+</form>
+</div>
+</body>
+</html>

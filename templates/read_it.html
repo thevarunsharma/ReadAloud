@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Read Aloud</title>
+</head>
+<style>
+  h1{
+    font-size: 8vw;
+    font-family:monospace;
+    font-weight: 1000;
+    text-shadow: 2px 2px gray;
+    margin: 2vw;
+    margin-bottom: 4vw;
+    color: #3b537a;
+    text-align: center;
+  }
+  audio{
+    margin : 2vw;
+    width: 80vw;
+  }
+  pre{
+    width: 90vw;
+    margin: auto;
+    font-size: 2vw;
+    font-family:sans-serif;
+    border: 2px solid black;
+    padding: 2vw;
+    border-radius: 1vw;
+  }
+  img{
+    border: 1px solid #3b537a;
+    max-width: 90vw;
+  }
+</style>
+<body>
+  <h1>Read Aloud</h1>
+  <center><audio controls>
+      <source src="{{url_for('static', filename='./audios/'+audio)}}">
+  </audio></center>
+</br></br>
+  <center><img src="{{url_for('static', filename='./images/'+image)}}"></center></br></br>
+<div>
+  <pre>{{text}}</pre>
+</div>
+</body>
+</html>
