@@ -20,16 +20,18 @@ def main():
             return "No image uploaded", 400
         imgname = secure_filename(f.filename)
         f.save("./static/images/%s"%imgname)
-        return redirect(url_for("play", image=imgname))
+        audname, text = prep_audio(imgname)
+        return redirect(url_for("play", image=imgname, audio=audname, text=text))
     return render_template('index.html')
 
 @app.route("/play/")
 def play():
-    imgname = request.args.get('image')
-    if not imgname:
+    image = request.args.get('image')
+    audio = request.args.get('audio')
+    text = request.args.get('text')
+    if not image or not audio or not text:
         abort(404)
-    audname, text = prep_audio(imgname)
-    return render_template('read_it.html', audio=audname, image=imgname, text=text)
+    return render_template('read_it.html', audio=audio, image=image, text=text)
 
 if __name__=="__main__":
     app.run(debug=True)
