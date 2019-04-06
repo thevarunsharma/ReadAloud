@@ -19,7 +19,10 @@ def main():
         if f is None:
             return "No image uploaded", 400
         imgname = secure_filename(f.filename)
-        f.save("./static/images/%s"%imgname)
+        try:
+            f.save("./static/images/%s"%imgname)
+        except:
+            return "No image uploaded", 400
         audname, text = prep_audio(imgname)
         return redirect(url_for("play", image=imgname, audio=audname, text=text))
     return render_template('index.html')
