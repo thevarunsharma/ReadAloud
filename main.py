@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, url_for, abort, render_template
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import pytesseract
 from gtts import gTTS
 
