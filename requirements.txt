@@ -9,7 +9,7 @@ gTTS==2.2.4
 gTTS-token==1.1.4
 gunicorn==20.1.0
 idna==2.8
-Jinja2==3.1.2
+Jinja2==3.0.3
 MarkupSafe==2.1.1
 packaging==21.3
 Pillow==8.4.0
